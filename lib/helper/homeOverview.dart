@@ -43,7 +43,7 @@ class HomeOverview extends StatelessWidget {
                   Text(
                     'Store Address',
                     style: TextStyle(
-                      fontWeight: FontWeight.w300,
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
                   Row(children: [
@@ -62,7 +62,7 @@ class HomeOverview extends StatelessWidget {
                   Text(
                     'User Address',
                     style: TextStyle(
-                      fontWeight: FontWeight.w300,
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
                   Row(
@@ -87,7 +87,7 @@ class HomeOverview extends StatelessWidget {
                         Text(
                           'Order PickUp Time',
                           style: TextStyle(
-                            fontWeight: FontWeight.w300,
+                            fontWeight: FontWeight.w500,
                           ),
                         ),
                         Row(
@@ -104,7 +104,7 @@ class HomeOverview extends StatelessWidget {
                         Text(
                           'Delivery Time',
                           style: TextStyle(
-                            fontWeight: FontWeight.w300,
+                            fontWeight: FontWeight.w500,
                           ),
                         ),
                         Row(
@@ -124,7 +124,7 @@ class HomeOverview extends StatelessWidget {
                     children: [
                       Text(
                         'Approx: ${detail.list[index].dist.toString()}',
-                        style: TextStyle(fontWeight: FontWeight.w400),
+                        style: TextStyle(fontWeight: FontWeight.w500),
                       ),
                       FlatButton(
                         color: Colors.green,

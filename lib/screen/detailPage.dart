@@ -6,6 +6,7 @@ class DetailPage extends StatelessWidget {
   static const routename = '/detail-page';
   @override
   Widget build(BuildContext context) {
+    var m = MediaQuery.of(context).size;
     final productId = ModalRoute.of(context).settings.arguments as String;
     var detail = Provider.of<Detail>(context);
     // print(productId);
@@ -19,7 +20,7 @@ class DetailPage extends StatelessWidget {
         backgroundColor: Theme.of(context).cardColor,
       ),
       body: ListView.builder(
-          physics: NeverScrollableScrollPhysics(),
+          // physics: NeverScrollableScrollPhysics(),
           itemCount: detail.list.length,
           itemBuilder: (context, index) {
             if (detail.list[index].id == productId) {
@@ -98,10 +99,31 @@ class DetailPage extends StatelessWidget {
                     ),
                     SizedBox(height: 10),
                     Text(
+                      'Mobile Number',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 22,
+                      ),
+                    ),
+                    Row(children: [
+                      Icon(
+                        Icons.mobile_screen_share,
+                        color: Theme.of(context).cardColor,
+                      ),
+                      SizedBox(width: 10, height: 10),
+                      Flexible(
+                        child: Text('+5598505052052',
+                            style: TextStyle(
+                              fontSize: 18,
+                            )),
+                      ),
+                    ]),
+                    SizedBox(height: 10),
+                    Text(
                       'Store Address',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 30,
+                        fontSize: 22,
                       ),
                     ),
                     Row(children: [
@@ -109,6 +131,7 @@ class DetailPage extends StatelessWidget {
                         Icons.location_on,
                         color: Theme.of(context).cardColor,
                       ),
+                      SizedBox(width: 10),
                       Flexible(
                         child: Text(detail.list[index].storeAddress,
                             style: TextStyle(
@@ -121,7 +144,7 @@ class DetailPage extends StatelessWidget {
                       'User Address',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 30,
+                        fontSize: 22,
                       ),
                     ),
                     Row(
@@ -130,6 +153,7 @@ class DetailPage extends StatelessWidget {
                           Icons.location_on,
                           color: Theme.of(context).cardColor,
                         ),
+                        SizedBox(width: 10),
                         Flexible(
                           child: Text(detail.list[index].destinationAdrress,
                               style: TextStyle(
@@ -139,45 +163,89 @@ class DetailPage extends StatelessWidget {
                       ],
                     ),
                     SizedBox(height: 10),
-                    Padding(
+                    Text(
+                      'Description',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 22,
+                      ),
+                    ),
+                    Row(
+                      children: [
+                        Icon(
+                          Icons.description,
+                          color: Theme.of(context).cardColor,
+                        ),
+                        SizedBox(width: 10),
+                        Flexible(
+                          child: Text(
+                              'Description and detail of product or  something they what to  describe of it',
+                              style: TextStyle(
+                                fontSize: 18,
+                              )),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 10),
+                    Container(
+                      // width: MediaQuery.of(context).size.width,
                       padding: const EdgeInsets.all(15.0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          FlatButton(
-                            minWidth: 100,
-                            color: Colors.green,
-                            child: Text(
-                              'PICKED',
-                              style: TextStyle(
-                                  color: Theme.of(context).primaryColor),
+                          Container(
+                            width: m.width / 3 - 30,
+                            child: FlatButton(
+                              minWidth: 100,
+                              color: Colors.green,
+                              child: Text(
+                                'PICKED',
+                                style: TextStyle(
+                                    fontSize: 12,
+                                    color: Theme.of(context).primaryColor),
+                              ),
+                              onPressed: () {},
                             ),
-                            onPressed: () {},
                           ),
-                          FlatButton(
-                            minWidth: 100,
-                            color: Colors.blue,
-                            child: Text(
-                              'HANDOVER',
-                              style: TextStyle(
-                                  color: Theme.of(context).primaryColor),
+                          Container(
+                            width: m.width / 3 - 30,
+                            child: FlatButton(
+                              minWidth: 100,
+                              color: Colors.blue,
+                              child: Text(
+                                'HANDOVER',
+                                style: TextStyle(
+                                    fontSize: 10,
+                                    color: Theme.of(context).primaryColor),
+                              ),
+                              onPressed: () {},
                             ),
-                            onPressed: () {},
                           ),
-                          FlatButton(
-                            minWidth: 100,
-                            color: Colors.red,
-                            child: Text(
-                              'DELIVERED',
-                              style: TextStyle(
-                                  color: Theme.of(context).primaryColor),
+                          Container(
+                            width: m.width / 3 - 30,
+                            child: FlatButton(
+                              minWidth: 100,
+                              color: Colors.red,
+                              child: Text(
+                                'DELIVERED',
+                                style: TextStyle(
+                                    fontSize: 10,
+                                    color: Theme.of(context).primaryColor),
+                              ),
+                              onPressed: () {},
                             ),
-                            onPressed: () {},
                           ),
                         ],
                       ),
                     ),
-                    Container(padding: EdgeInsets.all(15), child: Text('Map')),
+                    Container(
+                        padding: EdgeInsets.all(15),
+                        child: Column(
+                          children: [
+                            Text('MAP'),
+                            Image.asset('assets/map.jpeg')
+                          ],
+                        )),
                   ],
                 ),
               );

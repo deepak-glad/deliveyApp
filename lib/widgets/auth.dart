@@ -20,8 +20,10 @@ class _AuthPageState extends State<AuthPage> {
       decoration: BoxDecoration(
         border: Border.all(color: Colors.black12),
       ),
-      margin: const EdgeInsets.only(top: 220, left: 50),
-      height: h / 2 + 10,
+      margin: h < 553
+          ? const EdgeInsets.only(top: 100, left: 40)
+          : const EdgeInsets.only(top: 150, left: 50),
+      height: h < 553 ? h : h / 2 + 20,
       width: MediaQuery.of(context).size.width * 3 / 4,
       // color: Colors.black,
       child: SizedBox(
@@ -29,12 +31,37 @@ class _AuthPageState extends State<AuthPage> {
           // mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            Row(
+                // crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'WELCOME',
+                    style: TextStyle(
+                      // color: Theme.of(context).cardColor,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontStyle: FontStyle.italic,
+                      fontSize: 24,
+                    ),
+                  ),
+                  Text(
+                    ' BACK',
+                    style: TextStyle(
+                      // color: Theme.of(context).cardColor,
+                      color: Colors.deepOrange,
+                      fontStyle: FontStyle.italic,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ),
+                  ),
+                ]),
             SizedBox(
-              height: 40,
+              height: 10,
             ),
             TextFormField(
               style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                   fontSize: 20,
                   fontWeight: FontWeight.bold),
               key: ValueKey('username'),
@@ -49,13 +76,14 @@ class _AuthPageState extends State<AuthPage> {
               },
               keyboardType: TextInputType.name,
               decoration: InputDecoration(
-                // fillColor: Colors.grey[400],
-                filled: true,
+                focusedBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Colors.black),
+                ),
                 icon: Icon(
                   Icons.person,
                   color: Theme.of(context).cardColor,
                 ),
-                labelStyle: TextStyle(color: Colors.white),
+                labelStyle: TextStyle(color: Colors.black54),
                 labelText: 'USERNAME',
               ),
             ),
@@ -63,7 +91,7 @@ class _AuthPageState extends State<AuthPage> {
             TextFormField(
               obscureText: true,
               style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                   fontWeight: FontWeight.bold,
                   fontSize: 20),
               key: ValueKey('password'),
@@ -78,12 +106,14 @@ class _AuthPageState extends State<AuthPage> {
               },
               keyboardType: TextInputType.name,
               decoration: InputDecoration(
-                filled: true,
+                focusedBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Colors.black),
+                ),
                 icon: Icon(
                   Icons.lock_sharp,
                   color: Theme.of(context).cardColor,
                 ),
-                labelStyle: TextStyle(color: Colors.white),
+                labelStyle: TextStyle(color: Colors.black54),
                 labelText: 'Password',
               ),
             ),

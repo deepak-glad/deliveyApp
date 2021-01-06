@@ -1,6 +1,8 @@
 import 'package:delivery_app/provider/detail.dart';
 import 'package:delivery_app/screen/detailPage.dart';
 import 'package:delivery_app/screen/home_screen.dart';
+import 'package:delivery_app/screen/notification.dart';
+import 'package:delivery_app/screen/profile_detail.dart';
 import 'package:delivery_app/widgets/auth.dart';
 import 'package:flutter/material.dart';
 import 'screen/login.dart';
@@ -29,6 +31,8 @@ class MyApp extends StatelessWidget {
         routes: {
           HomePage.routeName: (ctx) => HomePage(),
           DetailPage.routename: (ctx) => DetailPage(),
+          NotificationPage.routeName: (ctx) => NotificationPage(),
+          ProfileDetail.routeName: (ctx) => ProfileDetail(),
         },
       ),
     );

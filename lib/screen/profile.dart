@@ -1,3 +1,4 @@
+import 'package:delivery_app/screen/profile_detail.dart';
 import 'package:flutter/material.dart';
 
 class Profile extends StatelessWidget {
@@ -36,7 +37,7 @@ class Profile extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
                   ),
-                  margin: EdgeInsets.all(20),
+                  margin: EdgeInsets.all(18),
                 ),
               ],
             ),
@@ -62,7 +63,9 @@ class Profile extends StatelessWidget {
                       fontWeight: FontWeight.w400,
                     ),
                   ),
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.of(context).pushNamed(ProfileDetail.routeName);
+                  },
                 ),
                 ListTile(
                   leading: Icon(

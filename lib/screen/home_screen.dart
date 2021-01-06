@@ -1,4 +1,5 @@
 import 'package:delivery_app/screen/history.dart';
+import 'package:delivery_app/screen/notification.dart';
 import 'package:delivery_app/screen/profile.dart';
 import 'package:delivery_app/widgets/home.dart';
 import 'package:flutter/cupertino.dart';
@@ -33,11 +34,14 @@ class _HomePageState extends State<HomePage> {
               style: TextStyle(color: Theme.of(context).primaryColor)),
           actions: [
             Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Icon(
-                Icons.notifications,
+              padding: const EdgeInsets.all(8.0),
+              child: IconButton(
+                icon: Icon(Icons.notifications),
                 color: Theme.of(context).primaryColor,
-                size: 30,
+                // size: 30,
+                onPressed: () {
+                  Navigator.of(context).pushNamed(NotificationPage.routeName);
+                },
               ),
             ),
           ],
