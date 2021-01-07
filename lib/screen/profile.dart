@@ -1,4 +1,6 @@
+import 'package:delivery_app/screen/contact_us.dart';
 import 'package:delivery_app/screen/profile_detail.dart';
+import 'package:delivery_app/screen/reviews.dart';
 import 'package:flutter/material.dart';
 
 class Profile extends StatelessWidget {
@@ -74,7 +76,9 @@ class Profile extends StatelessWidget {
                     size: 30,
                   ),
                   title: Text('Reviews'),
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.of(context).pushNamed(Reviews.routeName);
+                  },
                 ),
                 Divider(color: Colors.black12),
               ],
@@ -96,16 +100,9 @@ class Profile extends StatelessWidget {
                     size: 30,
                   ),
                   title: Text('Contact Us'),
-                  onTap: () {},
-                ),
-                ListTile(
-                  leading: Icon(
-                    Icons.settings,
-                    color: Theme.of(context).cardColor,
-                    size: 30,
-                  ),
-                  title: Text('Setings'),
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.of(context).pushNamed(ContactUs.routeName);
+                  },
                 ),
                 ListTile(
                   leading: Icon(

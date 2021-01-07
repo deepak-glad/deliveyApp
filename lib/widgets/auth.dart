@@ -12,6 +12,7 @@ class AuthPage extends StatefulWidget {
 
 class _AuthPageState extends State<AuthPage> {
   bool valuefirst = false;
+  bool _showPassword = false;
   @override
   Widget build(BuildContext context) {
     var h = MediaQuery.of(context).size.height;
@@ -89,7 +90,7 @@ class _AuthPageState extends State<AuthPage> {
             ),
             SizedBox(height: 15),
             TextFormField(
-              obscureText: true,
+              obscureText: !this._showPassword,
               style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
@@ -109,6 +110,12 @@ class _AuthPageState extends State<AuthPage> {
                 focusedBorder: UnderlineInputBorder(
                   borderSide: BorderSide(color: Colors.black),
                 ),
+                suffixIcon: IconButton(
+                    icon: Icon(Icons.remove_red_eye,
+                        color: this._showPassword ? Colors.blue : Colors.grey),
+                    onPressed: () {
+                      setState(() => this._showPassword = !this._showPassword);
+                    }),
                 icon: Icon(
                   Icons.lock_sharp,
                   color: Theme.of(context).cardColor,

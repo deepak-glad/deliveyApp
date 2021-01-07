@@ -70,7 +70,7 @@ class _NotificationPageState extends State<NotificationPage> {
           ),
         ),
         Container(
-          margin: const EdgeInsets.all(15),
+          margin: const EdgeInsets.symmetric(horizontal: 15),
           padding: const EdgeInsets.all(15),
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8.0),

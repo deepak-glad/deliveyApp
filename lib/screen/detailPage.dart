@@ -9,7 +9,6 @@ class DetailPage extends StatelessWidget {
     var m = MediaQuery.of(context).size;
     final productId = ModalRoute.of(context).settings.arguments as String;
     var detail = Provider.of<Detail>(context);
-    // print(productId);
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -101,8 +100,8 @@ class DetailPage extends StatelessWidget {
                     Text(
                       'Mobile Number',
                       style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 22,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 20,
                       ),
                     ),
                     Row(children: [
@@ -122,8 +121,8 @@ class DetailPage extends StatelessWidget {
                     Text(
                       'Store Address',
                       style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 22,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 20,
                       ),
                     ),
                     Row(children: [
@@ -143,8 +142,8 @@ class DetailPage extends StatelessWidget {
                     Text(
                       'User Address',
                       style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 22,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 20,
                       ),
                     ),
                     Row(
@@ -166,8 +165,8 @@ class DetailPage extends StatelessWidget {
                     Text(
                       'Description',
                       style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 22,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 20,
                       ),
                     ),
                     Row(
