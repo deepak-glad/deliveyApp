@@ -28,8 +28,6 @@ class _HomePageState extends State<HomePage> {
       child: Scaffold(
         appBar: AppBar(
           automaticallyImplyLeading: false,
-
-          // toolbarHeight: 75,
           title: Text('Delivery',
               style: TextStyle(color: Theme.of(context).primaryColor)),
           actions: [
